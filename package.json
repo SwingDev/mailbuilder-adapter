@@ -1,7 +1,7 @@
 {
-  "name": "buildmail-adapter",
+  "name": "mailbuilder-adapter",
   "version": "0.0.1",
-  "description": "Build mail adapter for mail-adapter#mail-worker",
+  "description": "Mail builder adapter for mail-adapter#mail-worker",
   "main": "index.js",
   "author": "SWINGDEV",
   "license": "ISC",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/swingdev/buildmail-adapter.git"
+    "url": "https://bitbucket.org/swingdev/mailbuilder-adapter.git"
   },
   "keywords": [
     "build",

@@ -2,7 +2,7 @@ ect           = require('ect')
 path          = require('path')
 fs            = require('fs')
 _             = require('lodash')
-MailAdapter   = require('mailworker').MailAdapter
+MailAdapter   = require('mail-worker').MailAdapter
 MailComposer  = require('mailcomposer').MailComposer
 
 

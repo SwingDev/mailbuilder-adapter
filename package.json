@@ -1,7 +1,7 @@
 {
   "name": "mailbuilder-adapter",
   "version": "0.0.1",
-  "description": "Mail builder adapter for mail-adapter#mail-worker",
+  "description": "mailbuilder-adapter for mail-adapter#mail-worker",
   "main": "index.js",
   "author": "SWINGDEV",
   "license": "ISC",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/swingdev/mailbuilder-adapter.git"
+    "url": "http://bitbucket.org/swingdev/mailbuilder-adapter.git"
   },
   "keywords": [
     "build",
@@ -22,7 +22,7 @@
     "lodash": "^2.4.1",
     "fs": "0.0.2",
     "mailcomposer": "^0.2.12",
-    "mailworker": "git+ssh://git@bitbucket.org:swingdev/mailworker.git"
+    "mail-worker": "git+ssh://git@bitbucket.org:swingdev/mail-worker.git"
   },
   "devDependencies": {
     "coffeelint": "^1.6.1",

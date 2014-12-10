@@ -42,7 +42,8 @@ class MailBuilder extends MailAdapter
     mailcomposer.setMessageOption mailOptions
 
     mailcomposer.buildMessage (err, mimeBody) ->
-      cb(err, mailFrom, mailTo, mimeBody)
+      return cb(err) if err
+      cb(null, mailFrom, mailTo, mimeBody)
 
 
   getFileIfExists: (filename) ->

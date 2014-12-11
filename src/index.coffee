@@ -6,7 +6,6 @@ MailAdapter   = require('mail-worker').MailAdapter
 MailComposer  = require('mailcomposer').MailComposer
 
 
-
 class MailBuilder extends MailAdapter
 
   constructor: (@tplPath) ->
@@ -18,12 +17,12 @@ class MailBuilder extends MailAdapter
   buildMail: (options, cb) ->
     {mailFrom, mailTo, mailSubject, mailTpl, mailData} = options
 
+    unless mailFrom or mailTo or mailSubject or mailTpl
+      throw new Error('You must run MailBuilder#buildMail with params: from, to, subject, template')
+
     htmlTemplatePath    = @getFileIfExists "#{mailTpl}.html.ect"
     txtTemplatePath     = @getFileIfExists "#{mailTpl}.txt.ect"
     generalTemplatePath = @getFileIfExists "#{mailTpl}.ect"
-
-    unless mailFrom? and mailTo? and mailSubject? and mailTpl?
-      throw new Error('You must run MailBuilder#buildMail with params: from, to, subject, template')
 
     mailOptions =
       from: mailFrom
@@ -44,7 +43,6 @@ class MailBuilder extends MailAdapter
     mailcomposer.buildMessage (err, mimeBody) ->
       return cb(err) if err
       cb(null, mailFrom, mailTo, mimeBody)
-
 
   getFileIfExists: (filename) ->
     filePath = path.resolve (path.join @tplPath, filename)

@@ -23,10 +23,8 @@
     "fs": "0.0.2",
     "mailcomposer": "^0.2.12"
   },
-  "peerDependencies": {
-    "mail-worker": "git+ssh://git@bitbucket.org:swingdev/mail-worker.git"
-  },
   "devDependencies": {
+    "mail-worker": "git+ssh://git@bitbucket.org:swingdev/mail-worker.git",
     "coffeelint": "^1.6.1",
     "del": "^0.1.3",
     "fs": "0.0.2",

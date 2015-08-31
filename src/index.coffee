@@ -15,7 +15,7 @@ class MailBuilder extends MailAdapter
       ext: '.ect'
 
   buildMail: (options, cb) ->
-    {mailFrom, mailTo, mailSubject, mailTpl, mailData, mailHeaders} = options
+    {mailFrom, mailTo, mailSubject, mailTpl, mailData, mailHeaders, mailCC, mailBCC} = options
 
     unless mailFrom or mailTo or mailSubject or mailTpl
       throw new Error('You must run MailBuilder#buildMail with params: from, to, subject, template')
@@ -28,6 +28,9 @@ class MailBuilder extends MailAdapter
       from: mailFrom
       to: mailTo
       subject: mailSubject
+
+    mailOptions.cc  = mailCC if mailCC?
+    mailOptions.bcc = mailBCC if mailBCC?
 
     if htmlTemplatePath and txtTemplatePath
       mailOptions.html = @mailRenderer.render htmlTemplatePath, mailData
@@ -51,4 +54,3 @@ class MailBuilder extends MailAdapter
 
 
 module.exports = MailBuilder
-  
